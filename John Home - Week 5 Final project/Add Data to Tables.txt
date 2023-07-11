@@ -1,0 +1,18 @@
+INSERT INTO `class registration database`.`tblclasses` (className, classID, capacity, semester, curEnroll)
+	VALUES 
+	("Software Architecture & Design","CST307-F","15","FAL23","0"),
+	("Software Architecture & Design","CST307-W","15","WIN23","0"),
+	("Software Development","CST310-P","15","SPR24","0"),
+	("Software Development","CST310-S","15","SUM23","0"),
+	("Software Testing","CST313-P","15","SPR24","0"),
+	("Software Testing","CST313-S","15","SUM23","0"),
+	("Information Literacy","GEN103-F","15","FAL23","0"),
+	("Information Literacy","GEN103-W","15","WIN23","0");
+	
+INSERT INTO `class registration database`.`tblsemester` (semesterName, semesterID, semesterYear)
+	VALUES
+	("Fall 2023","FAL23","2023"),
+	("Spring 2024","SPR24","2024"),
+	("Summer 2023","SUM23","2023"),
+	("Winter 2023","WIN23","2023");
+	

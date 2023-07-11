@@ -1,0 +1,48 @@
+
+CREATE DATABASE `class registration database`;
+
+CREATE TABLE `class registration database`.`tblclasses` (
+    className varchar(30),
+    classID varchar(8),
+    capacity int(2),
+    semester varchar(5),
+    curEnroll int(11),
+    PRIMARY KEY (classID),
+    INDEX (`semester`)
+    );
+
+CREATE TABLE `class registration database`.`tblregisteredclasses` (
+    studentID int(10),
+    classID varchar(8),
+    rcID int(10) AUTO_INCREMENT,
+    PRIMARY KEY (rcID),
+    INDEX (classID, studentID)
+    );
+
+CREATE TABLE `class registration database`.`tblsemester` (
+    semesterName varchar (50),
+    semesterID varchar(7),
+    semesterYear int(4),
+    PRIMARY KEY (semesterID)
+    );
+
+CREATE TABLE `class registration database`.`tblusers` (
+    firstName varchar(20),
+    lastName varchar(20),
+    address varchar(50),
+    email varchar(50),
+    phone int(11),
+    password varchar(50),
+    studentID int(10) AUTO_INCREMENT,
+    role varchar(10),
+    PRIMARY KEY (studentID),
+    INDEX (email)
+    );
+
+CREATE TABLE `class registration database`.`tblwaitlist` (
+    `studentID` INT(10) NOT NULL , 
+    `classID` VARCHAR(8) NOT NULL , 
+    `Date` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+    `position` INT(11) NOT NULL AUTO_INCREMENT , 
+    INDEX (`position`, `studentID`, `classID`)) ENGINE = InnoDB;
+				
